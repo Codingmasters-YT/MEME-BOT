@@ -11,7 +11,7 @@ const client = new Client({
 
 module.exports = client;
 client.prefix = prefix;
-client.memer = new Meme(api_token)  // Memer API Token from - https://discord.gg/emD44ZJaSA
+client.memer = new Meme(process.env.api_token)  // Memer API Token from - https://discord.gg/emD44ZJaSA
 
 client.commands = new Collection();
 client.aliases = new Collection();
@@ -32,4 +32,4 @@ client.on('error', console.error);
 });
 
 
-client.login(process.env.token || token);
+client.login(process.env.token);
